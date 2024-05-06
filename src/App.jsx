@@ -40,7 +40,7 @@ function App() {
 
       <div className="main-content h-100 container-content pt-10 px-5 relative">
         <h1 className='text-3xl font-bold uppercase tracking-widest'>ToDo</h1>
-        <button onClick={toggleColorTheme} className='absolute top-10 right-5'>{theme ? <img src="../public/img/icon-moon.svg" alt="" /> : <img src="../public/img/icon-sun.svg" alt="" />}</button>
+        <button onClick={toggleColorTheme} className='absolute top-10 right-5'>{theme ? <img src="/img/icon-moon.svg" alt="" /> : <img src="/img/icon-sun.svg" alt="" />}</button>
       
         <div className="content mt-10">
           <Checklist theme={theme}/>

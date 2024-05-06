@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ListItem({itemData, deleteTodo, toggleTask, showRemaining, showDone}) {
+export default function ListItem({itemData, deleteTodo, toggleTask, showRemaining, showDone, provided}) {
   
   const handleClick = () => {
     if (toggleTask){
@@ -19,7 +19,12 @@ export default function ListItem({itemData, deleteTodo, toggleTask, showRemainin
   }
 
   return (
-      <li className={`task-wrapper pr-3 flex relative ${itemData.done && 'task-done'}`}>
+    <div
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+    >
+      <li className={`task-wrapper pr-10 flex relative ${itemData.done && 'task-done'}`}>
 
           <span tabIndex={0} onKeyDown={handleKeyPress} onClick={handleClick} className={`relative w-full py-4 mr-11 pl-11 task-text ${itemData.done && 'line-through italic text-gray-500'}`}>{itemData.content.toString()}
           
@@ -48,5 +53,6 @@ export default function ListItem({itemData, deleteTodo, toggleTask, showRemainin
             </svg>
           </button>
       </li>
+    </div>
   )
 }

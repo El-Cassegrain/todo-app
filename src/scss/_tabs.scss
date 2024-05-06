@@ -4,14 +4,18 @@
     border-bottom-right-radius: 0.25rem;
     font-size: 0.85rem;
     &.dark-mode {
-        border-color: $dark-border-color;
         background-color: $very-dark-desaturated-blue;
         color: $dark-grayish-blue;
+        border-color: $very-dark-grayish-blue;
     }
     &.light-mode {
         background-color: $very-light-gray;
         color: $light-grayish-blue;
     }
+}
+
+.task-wrapper {
+    border-bottom: 1px solid $very-light-grayish-blue;
 }
 
 .tabs-nav-wrapper, .tabs-nav-wrapper-mobile {
@@ -22,7 +26,6 @@
 
 .tabs-nav-wrapper-mobile {
     &.dark-mode {
-        border-color: $dark-border-color;
         background-color: $very-dark-desaturated-blue;
         color: $dark-grayish-blue; 
     }
@@ -33,11 +36,22 @@
     
 }
 
-.btn-close {
+.dark-mode .btn-close {
     &:hover, &:focus {
         svg path {
             transition: fill ease 0.21s;
             fill: $light-grayish-blue;
         }
     }
+}
+.light-mode .btn-close {
+        svg path {
+            transition: fill ease 0.21s;
+            fill: $light-grayish-blue;
+        }
+        &:hover, &:focus {
+            svg path {
+                fill: $dark-grayish-blue;
+            }
+        }
 }

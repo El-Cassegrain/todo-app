@@ -24,6 +24,7 @@ body {
         }
         &.dark-mode {
             background-color: $very-dark-blue;
+            border-color: red;
         }
         &.light-mode{
             background-color: $very-light-grayish-blue;
@@ -45,38 +46,26 @@ body {
       color: $very-dark-blue;
       background-color: $very-light-gray;
     }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
   }
 @media (prefers-color-scheme: dark) {
     :root {
       color: $very-light-gray;
       background-color: $very-dark-blue;
     }
-    a:hover {
-      color: #747bff;
-    }
-    button {
-      background-color: #f9f9f9;
-    }
   }
 
 .dark-mode #bg-top {
-    background-image: url('../public/img/bg-mobile-dark.jpg');
+    background-image: url('/img/bg-mobile-dark.jpg');
 }
 .light-mode #bg-top {
-    background-image: url('../public/img/bg-mobile-light.jpg');
+    background-image: url('/img/bg-mobile-light.jpg');
 }
 
 @media screen and (min-width: 768px){
     .dark-mode #bg-top {
-        background-image: url('../public/img/bg-desktop-dark.jpg');
+        background-image: url('/img/bg-desktop-dark.jpg');
     }
     .light-mode #bg-top {
-        background-image: url('../public/img/bg-desktop-light.jpg');
+        background-image: url('/img/bg-desktop-light.jpg');
     }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { nanoid } from "nanoid"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import ListItem from "./ListItem"
 
 export default function Checklist({theme}) {
@@ -86,13 +87,23 @@ export default function Checklist({theme}) {
         setTodoList(remainingTasks);
       };
 
-
+      const onDragEnd = (result) => {
+        if (!result.destination) {
+          return;
+        }
+      
+        const items = Array.from(filteredTodoList);
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+      
+        setTodoList(items);
+      };
 
   return (
     <div className={`form-container mb-5 ${theme ? "light-mode" : "dark-mode"}`}>
         
         {todoList.length === 0 && (
-            <p className="mb-2">Well, you don't have anything to do...</p>
+            <p className="text-gray-100 mb-2">Well, you don't have anything to do...</p>
         )}
         
         <form action="" onSubmit={handleSubmit} className="shadow-lg">
@@ -117,23 +128,37 @@ export default function Checklist({theme}) {
           </form>
 
             <div className="list-container shadow-2xl">                
-                <ul className="mt-10 divide-y rounded">
-
-                    {filteredTodoList.map(task => (
-                        <ListItem 
-                        key={task.id} 
-                        itemData={task} 
-                        deleteTodo={deleteTodo} 
-                        toggleTask={toggleTask} 
-                        todo={todo}
-                        showRemaining={showRemaining}
-                        showDone={showDone}
-                        />
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="droppable">
+                {(provided, snapshot) => (
+                  <ul
+                    className={`mt-10 rounded ${snapshot.isDraggingOver ? 'droppable-active' : 'droppable-inactive'}`}
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                  >
+                    {/* Votre liste */}
+                    {filteredDoneTodoList.map((task, index) => (
+                      <Draggable key={task.id} draggableId={task.id} index={index}>
+                        {(provided) => (
+                          <ListItem
+                            provided={provided}
+                            itemData={task}
+                            deleteTodo={deleteTodo}
+                            toggleTask={toggleTask}
+                            todo={todo}
+                            showRemaining={showRemaining}
+                          />
+                        )}
+                      </Draggable>
                     ))}
-                </ul>
+                    {provided.placeholder}
+                  </ul>
+                )}
+              </Droppable>
+            </DragDropContext>
             </div>
 
-            <div className={`border-t py-4 px-4 tabs-wrapper flex justify-between ${theme ? 'light-mode' : 'dark-mode'}`}>
+            <div className={`py-4 px-4 tabs-wrapper flex justify-between ${theme ? 'light-mode' : 'dark-mode'}`}>
                 <div className="task-left-wrapper">
                     <span id="item-left-count">{remainingTasks} item{remainingTasks > 1 ? 's' : ''} left</span>
                 </div>

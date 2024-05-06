@@ -7,8 +7,10 @@
         }
     }
     &.dark-mode {
+        color: $very-light-grayish-blue;
         input {
             background-color: $very-dark-desaturated-blue;
+            color: $very-light-grayish-blue;
         }
         .list-container {
             ul {
@@ -50,7 +52,7 @@
     }
 }
 
-.task-text {
+.dark-mode .task-text {
     span.svg-wrapper > svg.icon-to-click > circle {
         stroke: $very-dark-grayish-blue;
     }
@@ -58,6 +60,18 @@
         span.svg-wrapper > svg.icon-to-click > circle {
             transition: stroke ease 0.24s 0.012s;
             stroke: $very-light-grayish-blue;
+        }
+
+}
+}
+.light-mode .task-text {
+    span.svg-wrapper > svg.icon-to-click > circle {
+        stroke: $very-light-grayish-blue;
+    }
+    &:hover, &:focus {
+        span.svg-wrapper > svg.icon-to-click > circle {
+            transition: stroke ease 0.24s 0.012s;
+            stroke: $dark-grayish-blue;
         }
 
 }

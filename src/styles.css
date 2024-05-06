@@ -25,6 +25,7 @@ body #main-container h1 {
 }
 body #main-container.dark-mode {
   background-color: hsl(235, 21%, 11%);
+  border-color: red;
 }
 body #main-container.light-mode {
   background-color: hsl(236, 33%, 92%);
@@ -44,39 +45,27 @@ body #main-container.light-mode {
     color: hsl(235, 21%, 11%);
     background-color: hsl(0, 0%, 98%);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     color: hsl(0, 0%, 98%);
     background-color: hsl(235, 21%, 11%);
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 .dark-mode #bg-top {
-  background-image: url("../public/img/bg-mobile-dark.jpg");
+  background-image: url("/img/bg-mobile-dark.jpg");
 }
 
 .light-mode #bg-top {
-  background-image: url("../public/img/bg-mobile-light.jpg");
+  background-image: url("/img/bg-mobile-light.jpg");
 }
 
 @media screen and (min-width: 768px) {
   .dark-mode #bg-top {
-    background-image: url("../public/img/bg-desktop-dark.jpg");
+    background-image: url("/img/bg-desktop-dark.jpg");
   }
   .light-mode #bg-top {
-    background-image: url("../public/img/bg-desktop-light.jpg");
+    background-image: url("/img/bg-desktop-light.jpg");
   }
 }
 /* Form styles */
@@ -84,8 +73,12 @@ body #main-container.light-mode {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
+.form-container.dark-mode {
+  color: hsl(236, 33%, 92%);
+}
 .form-container.dark-mode input {
   background-color: hsl(235, 24%, 19%);
+  color: hsl(236, 33%, 92%);
 }
 .form-container.dark-mode .list-container ul {
   background-color: hsl(235, 24%, 19%);
@@ -117,12 +110,20 @@ body #main-container.light-mode {
   cursor: pointer;
 }
 
-.task-text span.svg-wrapper > svg.icon-to-click > circle {
+.dark-mode .task-text span.svg-wrapper > svg.icon-to-click > circle {
   stroke: #4d5066;
 }
-.task-text:hover span.svg-wrapper > svg.icon-to-click > circle, .task-text:focus span.svg-wrapper > svg.icon-to-click > circle {
+.dark-mode .task-text:hover span.svg-wrapper > svg.icon-to-click > circle, .dark-mode .task-text:focus span.svg-wrapper > svg.icon-to-click > circle {
   transition: stroke ease 0.24s 0.012s;
   stroke: hsl(236, 33%, 92%);
+}
+
+.light-mode .task-text span.svg-wrapper > svg.icon-to-click > circle {
+  stroke: hsl(236, 33%, 92%);
+}
+.light-mode .task-text:hover span.svg-wrapper > svg.icon-to-click > circle, .light-mode .task-text:focus span.svg-wrapper > svg.icon-to-click > circle {
+  transition: stroke ease 0.24s 0.012s;
+  stroke: #777a92;
 }
 
 /* Tabs styles */
@@ -132,13 +133,17 @@ body #main-container.light-mode {
   font-size: 0.85rem;
 }
 .tabs-wrapper.dark-mode {
-  border-color: hsl(237, 14%, 26%);
   background-color: hsl(235, 24%, 19%);
   color: #777a92;
+  border-color: #4d5066;
 }
 .tabs-wrapper.light-mode {
   background-color: hsl(0, 0%, 98%);
   color: hsl(234, 39%, 85%);
+}
+
+.task-wrapper {
+  border-bottom: 1px solid hsl(236, 33%, 92%);
 }
 
 .tabs-nav-wrapper button.active, .tabs-nav-wrapper-mobile button.active {
@@ -146,7 +151,6 @@ body #main-container.light-mode {
 }
 
 .tabs-nav-wrapper-mobile.dark-mode {
-  border-color: hsl(237, 14%, 26%);
   background-color: hsl(235, 24%, 19%);
   color: #777a92;
 }
@@ -155,9 +159,17 @@ body #main-container.light-mode {
   color: hsl(234, 39%, 85%);
 }
 
-.btn-close:hover svg path, .btn-close:focus svg path {
+.dark-mode .btn-close:hover svg path, .dark-mode .btn-close:focus svg path {
   transition: fill ease 0.21s;
   fill: hsl(234, 39%, 85%);
+}
+
+.light-mode .btn-close svg path {
+  transition: fill ease 0.21s;
+  fill: hsl(234, 39%, 85%);
+}
+.light-mode .btn-close:hover svg path, .light-mode .btn-close:focus svg path {
+  fill: #777a92;
 }
 
 /* Main styles */
