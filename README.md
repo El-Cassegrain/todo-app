@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github]([https://your-solution-url.com](https://github.com/El-Cassegrain/todo-app/))
+- Live Site URL: [Live site]([https://your-live-site-url.com](https://el-cassegrain.github.io/todo-app/))
 
 ## My process
 Keep things perfectly done
