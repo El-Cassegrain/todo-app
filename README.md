@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github]([https://your-solution-url.com](https://github.com/El-Cassegrain/todo-app/))
-- Live Site URL: [Live site]([https://your-live-site-url.com](https://el-cassegrain.github.io/todo-app/))
+- Solution URL: (https://github.com/El-Cassegrain/todo-app/)
+- Live Site URL: (https://el-cassegrain.github.io/todo-app/)
 
 ## My process
 Keep things perfectly done
@@ -53,5 +53,5 @@ Keep things perfectly done
 
 ## Author
 
-- Website - [Add your name here](https://etienneleriche.fr/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/El-Cassegrain)
+- Website - [Etienne Leriche](https://etienneleriche.fr/)
+- Frontend Mentor - [@El-Cassegrain](https://www.frontendmentor.io/profile/El-Cassegrain)
