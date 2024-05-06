@@ -1,0 +1,165 @@
+/* Variables */
+/* Light theme */
+/* Dark theme */
+/* Global styles */
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+body #main-container {
+  min-height: 100vh;
+}
+body #main-container h1 {
+  color: white;
+}
+body #main-container.dark-mode {
+  background-color: hsl(235, 21%, 11%);
+}
+body #main-container.light-mode {
+  background-color: hsl(236, 33%, 92%);
+}
+
+.container-content {
+  margin: 0 auto;
+  max-width: 580px;
+}
+
+.info-reorder {
+  color: #777a92;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: hsl(235, 21%, 11%);
+    background-color: hsl(0, 0%, 98%);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: hsl(0, 0%, 98%);
+    background-color: hsl(235, 21%, 11%);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.dark-mode #bg-top {
+  background-image: url("../public/img/bg-mobile-dark.jpg");
+}
+
+.light-mode #bg-top {
+  background-image: url("../public/img/bg-mobile-light.jpg");
+}
+
+@media screen and (min-width: 768px) {
+  .dark-mode #bg-top {
+    background-image: url("../public/img/bg-desktop-dark.jpg");
+  }
+  .light-mode #bg-top {
+    background-image: url("../public/img/bg-desktop-light.jpg");
+  }
+}
+/* Form styles */
+.form-container .list-container ul li:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.form-container.dark-mode input {
+  background-color: hsl(235, 24%, 19%);
+}
+.form-container.dark-mode .list-container ul {
+  background-color: hsl(235, 24%, 19%);
+}
+.form-container.dark-mode .list-container ul li {
+  background-color: hsl(235, 24%, 19%);
+  border-color: hsl(237, 14%, 26%);
+}
+.form-container.light-mode input {
+  color: #4d5066;
+}
+.form-container.light-mode input::placeholder {
+  color: hsl(234, 39%, 85%);
+}
+.form-container.light-mode .list-container ul {
+  background-color: hsl(0, 0%, 98%);
+}
+.form-container.light-mode .list-container ul li {
+  background-color: hsl(0, 0%, 98%);
+  color: #777a92;
+}
+
+.svg-wrapper svg {
+  width: 24px;
+  height: 24px;
+}
+
+.task-text:hover, .task-text:focus {
+  cursor: pointer;
+}
+
+.task-text span.svg-wrapper > svg.icon-to-click > circle {
+  stroke: #4d5066;
+}
+.task-text:hover span.svg-wrapper > svg.icon-to-click > circle, .task-text:focus span.svg-wrapper > svg.icon-to-click > circle {
+  transition: stroke ease 0.24s 0.012s;
+  stroke: hsl(236, 33%, 92%);
+}
+
+/* Tabs styles */
+.tabs-wrapper {
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  font-size: 0.85rem;
+}
+.tabs-wrapper.dark-mode {
+  border-color: hsl(237, 14%, 26%);
+  background-color: hsl(235, 24%, 19%);
+  color: #777a92;
+}
+.tabs-wrapper.light-mode {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(234, 39%, 85%);
+}
+
+.tabs-nav-wrapper button.active, .tabs-nav-wrapper-mobile button.active {
+  color: hsl(220, 98%, 61%);
+}
+
+.tabs-nav-wrapper-mobile.dark-mode {
+  border-color: hsl(237, 14%, 26%);
+  background-color: hsl(235, 24%, 19%);
+  color: #777a92;
+}
+.tabs-nav-wrapper-mobile.light-mode {
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(234, 39%, 85%);
+}
+
+.btn-close:hover svg path, .btn-close:focus svg path {
+  transition: fill ease 0.21s;
+  fill: hsl(234, 39%, 85%);
+}
+
+/* Main styles */
+
+/*# sourceMappingURL=styles.css.map */

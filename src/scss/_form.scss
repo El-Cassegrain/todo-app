@@ -1,0 +1,72 @@
+/* Form styles */
+.form-container {
+    .list-container ul li {
+        &:first-child {
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+    }
+    &.dark-mode {
+        input {
+            background-color: $very-dark-desaturated-blue;
+        }
+        .list-container {
+            ul {
+                 background-color: $very-dark-desaturated-blue;
+                 li {
+                    background-color: $very-dark-desaturated-blue;
+                    border-color: $dark-border-color;
+                 }
+             } 
+         }
+    }
+    &.light-mode {
+        input {
+            color: $very-dark-grayish-blue;
+        }
+        input::placeholder {
+            color: $light-grayish-blue;
+        }
+        .list-container {
+            ul {
+                background-color: $very-light-gray;
+                li {
+                    background-color: $very-light-gray;
+                    color: $dark-grayish-blue
+                }
+            }
+        }
+    }
+}
+
+.svg-wrapper svg {
+    width: 24px;
+    height: 24px;
+}
+
+.task-text {
+    &:hover, &:focus {
+        cursor: pointer;
+    }
+}
+
+.task-text {
+    span.svg-wrapper > svg.icon-to-click > circle {
+        stroke: $very-dark-grayish-blue;
+    }
+    &:hover, &:focus {
+        span.svg-wrapper > svg.icon-to-click > circle {
+            transition: stroke ease 0.24s 0.012s;
+            stroke: $very-light-grayish-blue;
+        }
+
+}
+}
+
+// .task-wrapper:hover .svg-wrapper .icon-to-click {
+//     stroke: green;
+// }
+
+
+
+
